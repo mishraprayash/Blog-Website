@@ -14,6 +14,13 @@ const connectDB = require('./server/config/dbconnect')
 
 connectDB()
 
+// This enables the parsing of URL-encoded data sent in a POST request 
+app.use(express.urlencoded({extended:true}))
+
+
+// This enables the parsing of JSON data sent in a POST request
+app.use(express.json())
+
 // this will enable us to acess our public files and integrate them with ejs easily.
 app.use(express.static('public'))
 

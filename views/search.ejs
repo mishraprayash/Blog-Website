@@ -1,0 +1,25 @@
+<div class="author">
+    <div class="author_heading">Search Results</div>
+
+    <section class="article">
+        <ul class="article-ul">
+            <!-- as data is a array of document we are looping over it and referencing it through its specific key in the database with post argument with refers to one document at a time -->
+
+            <% if (data.length!==0) { %>
+                <% data.forEach(post=> { %>
+
+                    <li>
+                        <a href="/post/<%= post._id %>">
+                            <span>
+                                <%= post.title %>
+                            </span>
+                            <span class="article-list_date">
+                                <%= post.createdAt.toDateString() %>
+                            </span>
+                        </a>
+                    </li>
+                    <% }) %>
+                        <% } %>
+        </ul>
+    </section>
+</div>

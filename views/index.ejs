@@ -3,37 +3,31 @@
     <p class="author_body"> Computer Engineering Student and Web Developer</p>
 </div>
 
-<img src="/imgs/prayash.jpg" alt="prayash image"  class="prayash-image" width="400" height="428" >
+<img src="/imgs/prayash.jpg" alt="prayash image" class="prayash-image" width="400" height="428">
 
 <section class="articles">
     <h2 class="article_heading">
         Latest Posts
     </h2>
     <ul class="article-ul">
-        <li>
-            <a href="#">
-                <span>Post Title</span>
-                <span class="article-list_date">Date</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span>Post Title</span>
-                <span class="article-list_date">Date</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span>Post Title</span>
-                <span class="article-list_date">Date</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <span>Post Title</span>
-                <span class="article-list_date">Date</span>
-            </a>
-        </li>
+
+        <!-- as data is a array of document we are looping over it and referencing it through its specific key in the database with post argument with refers to one document at a time -->
+        <% data.forEach(post=> { %>
+
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span>
+                        <%= post.title %>
+                    </span>
+                    <span class="article-list_date">
+                        <%= post.createdAt.toDateString() %>
+                    </span>
+                </a>
+            </li>
+            <% }) %>
     </ul>
-    <a href="#" class="pagination">&lt; View Older Posts</a>
+    <% if (nextPage!==null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+
+        <% } %>
 </section>

@@ -192,6 +192,7 @@ img {
     color: var(--black);
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    font-size: var(--font-size-lg);
 }
 
 .author_body {
@@ -211,7 +212,7 @@ img {
 
 .article-ul {
     list-style-type: none;
-    font-size: clamp(1.1rem, calc(1.08rem + 0.22vw), 1.25rem);
+    /* font-size: clamp(1.1rem, calc(1.08rem + 0.22vw), 1.25rem); */
     display: flex;
     flex-direction: column;
 }
@@ -244,7 +245,7 @@ img {
 }
 
 .article-ul li {
-    font-size: 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: filter 0.1s;
 
@@ -315,4 +316,8 @@ img {
     right: 25%;
     color: var(--lightgrey);
     padding: .5rem;
+}
+#searchClose:hover{
+    background-color: #e7e2db4f;
+    border-radius:var(--border-radius);
 }
